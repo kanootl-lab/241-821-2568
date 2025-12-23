@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container .item{
+            background-color: lightblue;
+        }
+        .button{
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            
+        }
+        .button:hover{
+            background-color: green;
+        }
+        .button.active{
+            background-color: blue;
+        }
+        .button:focus{
+            background-color: yellow;           
+        }
+        input:focus{
+           border: 10px solid red;
+        }
+        .item1 + .item2{
+            background-color: lightblue;            
+        }
+        input[type="text"]{
+            border: 2px solid green;
+        }
+    </style>
+</head>
+</body>
+<div class="footer-container">
+    Container Content
+    <div class="itme">
+        Itme Content
+    </div>
+    <div class="footer-container">
+    Container Content
+    <div class="itme">
+        Itme Content
+    </div>
+</div>
+<button class="button">Click me</button>
+</body>
+</html>    
