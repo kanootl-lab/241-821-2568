@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    เพศ:
+    <input type="radio" name="gender" onchange="genderChange()" check="male">Male
+    <input type="radio" name="gender" onchange="genderChange()">Female
+    <script>
+        function genderChange() {
+            //เลือกเพศเพื่อinput
+            let genderInput = document.querySelectorAll('input[name=gender]');
+            //วนลูปเช็คค่าที่เลือก
+            for (let i = 0; i < genderInput.length; i++) {
+                if (genderInput[i].checked) {
+                    console.log("เลือกเพศ:"+ genderInput[i].value);
+                }
+            }
+        }
+        //<button onclick="useClick()">sumit</button>
+    //<div onclick="divClick()">divclick</div>
+        //function useClick(){
+            //console.log("click");
+        //}
+        //function divClick(){
+            //console.log("div click");
+        //}
+        // งานอดิเรก:
+    //<input type="checkbox" name="hobby" value="football">Football
+    //<input type="checkbox" name="hobby" value="basketball">Basketball
+    //<input type="checkbox" name="hobby" value="tennis">Tennis
+        //select DOM
+        //const nameInput = document.getElementsByClassName("input");
+        //console.log(nameInput);// John Doe
+        //for (let i = 0; i < nameInput.length; i++) {
+        //    console.log(nameInput[i].value);
+        //}
+       // let checkboxes = document.querySelectorAll('input[name="hobby"]');
+        //for (let i = 0; i < checkboxes.length; i++) {
+        //    console.log(checkboxes[i].value);
+        //}
+    </script>
+</body>
+</html>
