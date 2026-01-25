@@ -4,47 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-     @font-face{
-        font-family:'Kanit';
-        src: url(./Kanit/Kanit-Regular.ttf);
-     }
-        body{
-            background-color: gray;
-            font-family: 'Kanit';
-        }
-        #register-from{
-            color: white;
-            padding-left: 20px;
-            margin-left: 20px;
-            padding-right: 20px;
-            margin-right: 20px;
-            border: 1px solid black;
-            text-align: center;
-        }
-     .form-cortrol{
-        border: 2px solid black;
-        margin-bottom: 18px;
-     }
-
-    </style>
-    <!--ส่วนจะไม่แสดงผล-->
 </head>
 <body>
-    <!--ส่วนนี้จะแสดงผล-->
-    <div id="register-from">Register Fromxxx</div>
-    ชื่อ:<input type="text" name="name"><br>
-    นามสกุล:<input type="text" name="lname">
-    อายุ:<input type="number" name="age"min="0"max="150"><br>
-    เพศ:
-    <input type="radio" name="gender" value="male">ชาย
-    <input type="radio" name="gender" value="female">หญิง<br>
-    งานอริเรก:
-    <input type="checkbox" name="hobby" value="reading">อ่านหนังสือ
-    <input type="checkbox" name="hobby" value="reading">ท่องเที่ยว
-    <input type="checkbox" name="hobby" value="sports">กีฬา<br>
-    อธิบายตัวเอง:<br>
-    <textarea name="desciption" rows="4" cols="50"></textarea><br>
-    <input type="submit"value="Submit">
+    <h2>แบบฟอร์มสอบถาม</h2>
+    <div id="content"></div>
+  <input type="checkbox"name="interest"value="กีฬา">
+  <input type="checkbox"name="interest"value="ดนตรี">
+  <input type="checkbox"name="interest"value="อ่านหนังสือ">
+  <br><br>
+  <button onclick="SubmitIntterest()">ส่งข้อมูล</button>
+    <script>
+        function SubmitIntterest(){
+            let checkbox=document.querySelectorAll('input[name="interest"]')
+            for(let i =0;i<checkbox.length;i++){
+                if(checkbox[i].checked){
+                    console.log(checkbox[i].value);
+                }
+            }
+             contenHTML+='</ul>'
+        let contentDiv=document.getElementById('content')
+        contentDiv.innerHTML=contenHTML
+        }
+       
+        //let hiDom=document.getElementById("hi")
+        //hiDom.innerHTML='hello <b>A</b>';
+        //console.log(hiDom.textContent)
+        //console.log(hiDom.innerText)
+        //console.log(hiDom.innerHTML)
+    //     ชื่อ
+   //<button
+  // onmouseover="onmousesavefname()"
+   //onmouseup="onmouseusefname()"
+  // onmousedown="onmousedownfname()">click me</button
+       // function onmouseover(){
+           //console.log("mounu is over the button")
+        //}
+        // function onmouseup(){
+           // console.log("mounu is up the button")
+       // }
+       // function onmousedown(){
+          // console.log("mounu is dowe the button")
+       // }
+       //   ชื่อ
+    //<input type="text"name="fname"onkeydowe="onkeyfname()">
+        //function onkeyfname(){
+            //let fname=document.querySelector('input[name="fname"]')
+           // console.log("fname",fname.value)
+        //}
+        //เพศ:
+    //<input type="radio" name="gender" onchange="genderChange()" check="male">Male
+    //<input type="radio" name="gender" onchange="genderChange()">Female
+        //function genderChange() {
+            //เลือกเพศเพื่อinput
+            //let genderInput = document.querySelectorAll('input[name=gender]');
+            //วนลูปเช็คค่าที่เลือก
+            //for (let i = 0; i < genderInput.length; i++) {
+                //if (genderInput[i].checked) {
+                    //console.log("เลือกเพศ:"+ genderInput[i].value);
+               // }
+           // }
+        //}
+        //<button onclick="useClick()">sumit</button>
+    //<div onclick="divClick()">divclick</div>
+        //function useClick(){
+            //console.log("click");
+        //}
+        //function divClick(){
+            //console.log("div click");
+        //}
+        // งานอดิเรก:
+    //<input type="checkbox" name="hobby" value="football">Football
+    //<input type="checkbox" name="hobby" value="basketball">Basketball
+    //<input type="checkbox" name="hobby" value="tennis">Tennis
+        //select DOM
+        //const nameInput = document.getElementsByClassName("input");
+        //console.log(nameInput);// John Doe
+        //for (let i = 0; i < nameInput.length; i++) {
+        //    console.log(nameInput[i].value);
+        //}
+       // let checkboxes = document.querySelectorAll('input[name="hobby"]');
+        //for (let i = 0; i < checkboxes.length; i++) {
+        //    console.log(checkboxes[i].value);
+        //}
+    </script>
 </body>
 </html>
