@@ -1,0 +1,12 @@
+dock ps --all//
+docker run busybox ls
+docker run busybox ping
+docker pull busybox
+docker start -a
+docker system prune//อันตราย
+docker run ninx
+docker exec -it  CONTAINER ID sh
+docker exec -it  CONTAINER ID bash
+docker run -q 
+docker stop ได้หลายid 
+exit//ออก
