@@ -1,22 +1,38 @@
 const express =require('express')
-const bodyParser = require('bodyParser')
+const bodyParser = require('body-parser')
+const mysql=require('mysql2/promise')
 const app = express();
 const port = 8000
 
 app.use(bodyParser.json());
 let users=[];
-let counter =[];
-app.get('/user',(req, res) =>{
-    res.json(users)
+let counter =1;
+let conn=null
+const initDBConnnection = async() => {
+    conn =await mysql.createConnection({
+        host: 'localhost',
+            user: 'root',      
+            password: 'root',  
+            database: 'webdb',
+            port: 8821 
+    })
+}
+
+
+//path get
+app.get('/users',async (req,res)=>{
+    const results=await conn.query('SELECT * FROM users')
+    res.json(results[0])
 })
-app.post('/user',(req, res) =>{
-let user=req.body;
-user.id = counter
-counter += 1;
-users.push(user)
+
+app.post('/users',async(req, res) =>{
+let user = req.body;
+const results=await conn.query('INSERT INTO users SET ?',user)
+console.log('results',results)
 res.json({
-    Message:'User',
-    user:user});
+    message:"User added successfully",
+    data: results[0]
+ })
 })
 app.put('/user',(req, res) =>{
     let id = req.params.id;
@@ -45,6 +61,7 @@ app.put('/user',(req, res) =>{
             indexdelete:seletedindex
         })
     })
-app.listen(port, () =>{
+app.listen(port,async() =>{
+    await initDBConnnection();
     console.log('server is runing on port${port}')
 });
