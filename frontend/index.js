@@ -83,7 +83,7 @@ const submitData = async () => {
             error.errors = error.response.data.errors;
 
         }
-        
+
         let htmlData = '<div>'
         htmlData += `<div>${error.message}</div>`;
         htmlData += '<ul>';
