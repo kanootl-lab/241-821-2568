@@ -17,7 +17,7 @@ const loadData = async()=>{
         const user =response.data[i]
         htmlData += ` <div>
           ${user.id} ${user.firstname} ${user.lastname}
-        <button>Edit</button>
+       <a herf="index.html"?id= ${user.id}></a> <button>Edit</button>
         <button class='delete' data-id='${user.id}'>Delete</button>
           </div>`
      }

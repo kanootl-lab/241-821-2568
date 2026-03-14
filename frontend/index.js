@@ -1,6 +1,39 @@
 const { use } = require("react");
 const { errors } = require("undici-types");
+const BASE_URL = 'http://localhost:8000/users'
+let mode ='CREATE'
+window.onload = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    
+    console.log('id ', id);
+    
+    if (id) {
+        mode = 'EDIT';
+        seletedit = id;
+    }
+};
 
+try{
+     let firstNameDOM = document.querySelector('input[name=firstname]');
+    let lastNameDOM = document.querySelector('input[name=lastname]');
+    let ageDOM = document.querySelector('input[name=age]');
+    let genderDOM = document.querySelector('input[name=gender]:') 
+    let interestDOMs = document.querySelectorAll('input[name=interests]') 
+    for (let i = 0; i< genderDOM.length; i++){
+        if (genderDOM[i].value==user.gender){
+            genderDOM[i].checked = 'true'
+        }
+    }
+
+      for (let i = 0; i< interestDOMs.length; i++){
+        if (interestDOMs[i].value==user.gender){
+            interestDOMs[i].checked = 'true'
+        }
+    }
+}catch(error){
+console.log('error')
+}
 const displayMessage = (text, type) => {
     const msgBox = document.getElementById('msg');
     msgBox.innerText = text;
@@ -74,6 +107,10 @@ const submitData = async () => {
         console.log('response', response);
         messageDOM.innerText = 'บันทึกข้อมูลสำเร็จ';
         messageDOM.className = 'message success';
+        if(mode=='CREATE'){
+            const reponse = 'แก้ไขสำเร็จ'
+            console.log('reponse',reponse.data)
+        }
     } catch (error) {
         console.log('error message', error.message);
         console.log('error', error.errors);
